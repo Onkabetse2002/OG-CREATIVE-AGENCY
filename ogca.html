@@ -7,14 +7,19 @@
     <meta name="keywords" content="website development, software developer, OG Creative Agency, Onkabetse Galehole">
     <title>OG Creative Agency - Website Development Services</title>
     <link rel="stylesheet" href="ogca.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> <!-- Professional font -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> <!-- Add a favicon image -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">OG Creative Agency</div>
-            <ul>
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+            <ul id="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
@@ -55,8 +60,8 @@
 
     <section id="contact">
         <h2>Contact Me</h2>
-        <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST"> <!-- Replace with your Formspree endpoint -->
-            <label for="name" class="sr-only">Onkabetse Galehole</label>
+        <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+            <label for="name" class="sr-only">Your Name</label>
             <input type="text" id="name" name="name" placeholder="Your Name" required>
             <label for="email" class="sr-only">Your Email</label>
             <input type="email" id="email" name="email" placeholder="Your Email" required>
@@ -64,7 +69,7 @@
             <textarea id="message" name="message" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
         </form>
-        <p>Or email me directly at: onkabetsenkabi3@gmail.com</p> <!-- Replace with your real email -->
+        <p>Or email me directly at: [your-email@example.com]</p>
     </section>
 
     <footer>
