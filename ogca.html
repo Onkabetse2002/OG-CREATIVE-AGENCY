@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="ogca.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>  <!-- EmailJS library -->
 </head>
 <body>
     <header>
@@ -60,20 +61,21 @@
 
     <section id="contact">
         <h2>Contact Me</h2>
-        <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-            <label for="name" class="sr-only">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
-            <label for="email" class="sr-only">Your Email</label>
-            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <form id="contact-form">  <!-- EmailJS handles submission -->
+            <label for="from_name" class="sr-only">Your Name</label>
+            <input type="text" id="from_name" name="from_name" placeholder="Your Name" required>
+            <label for="from_email" class="sr-only">Your Email</label>
+            <input type="email" id="from_email" name="from_email" placeholder="Your Email" required>
             <label for="message" class="sr-only">Your Message</label>
             <textarea id="message" name="message" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
         </form>
+        <div id="form-status"></div>  <!-- Shows success/error messages -->
         <p>Or email me directly at: onkabetsenkabi3@gmail.com</p>
     </section>
 
     <footer>
-        <p>&copy; 2023 OG Creative Agency. All rights reserved.</p>
+        <p>&copy; 2026 OG Creative Agency. All rights reserved.</p>
     </footer>
 
     <script src="ogca.js"></script>

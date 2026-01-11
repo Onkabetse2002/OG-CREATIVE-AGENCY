@@ -1,3 +1,11 @@
+// EmailJS setup (replace YOUR_SERVICE_ID and YOUR_TEMPLATE_ID with your actual IDs from EmailJS dashboard)
+const serviceID = 'ogservice_abc123';  // e.g., 'service_abc123' - Get from Email Services
+const templateID = 'template_b1jdwlh';  // e.g., 'template_xyz789' - Get from Email Templates
+const publicKey = 'hFJwWMb6MB3TbaJO9';  // Your Public Key
+
+// Initialize EmailJS
+emailjs.init(publicKey);
+
 // Hamburger Menu Toggle Functionality
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.getElementById('nav-menu');
@@ -34,26 +42,21 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Basic Form Handling (Fallback if not using Formspree; remove if unnecessary)
+// Handle contact form submission with EmailJS
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault(); // Prevent default submission
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+    const statusDiv = document.getElementById('form-status');
+    statusDiv.innerHTML = 'Sending...';
 
-    // Simple validation
-    if (!name || !email || !message) {
-      alert('Please fill in all fields.');
-      return;
-    }
-
-    // For demo: Log to console (replace with actual send logic if not using Formspree)
-    console.log('Form submitted:', { name, email, message });
-    alert('Thank you! Your message has been sent.'); // Replace with real feedback
-
-    // Reset form
-    contactForm.reset();
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        statusDiv.innerHTML = '<p style="color: green;">Thank you! Your message has been sent. I\'ll get back to you soon.</p>';
+        this.reset(); // Clear the form
+      }, (error) => {
+        console.error('EmailJS Error:', error);  // For debugging
+        statusDiv.innerHTML = '<p style="color: red;">Failed to send message. Please try again or email me directly.</p>';
+      });
   });
 }
