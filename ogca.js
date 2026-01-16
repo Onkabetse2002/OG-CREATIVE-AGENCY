@@ -1,22 +1,23 @@
-// ================= EMAILJS CONFIG =================
+// ========================
+// OG CREATIVE AGENCY JS
+// ========================
+
+// ---------- EmailJS Setup ----------
 const serviceID = 'service_cnixn9e';
-const adminTemplateID = 'template_6t6x5kq';
-const clientTemplateID = 'template_aqhupw5';
+const adminTemplateID = 'template_6t6x5kq';  // Sends email to you
+const clientTemplateID = 'template_aqhupw5'; // Sends confirmation to client
 const publicKey = 'hFJwWMb6MB3TbaJO9';
 
 emailjs.init(publicKey);
 
-// ================= HAMBURGER MENU =================
+// ---------- Hamburger Menu ----------
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.getElementById('nav-menu');
 
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   navMenu.classList.toggle('active');
-  hamburger.setAttribute(
-    'aria-expanded',
-    hamburger.classList.contains('active')
-  );
+  hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
 });
 
 navMenu.addEventListener('click', (e) => {
@@ -43,7 +44,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// ================= CONTACT FORM WITH MODAL =================
+// ---------- Contact Form ----------
 const contactForm = document.getElementById('contact-form');
 const modal = document.getElementById('form-modal');
 const modalMessage = document.getElementById('modal-message');
@@ -53,35 +54,26 @@ if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // Show sending message in modal
     modalMessage.textContent = 'Sending message...';
     modal.style.display = 'block';
 
-    // 1️⃣ Send email to admin
+    // Send email to admin first
     emailjs.sendForm(serviceID, adminTemplateID, this)
       .then(() => {
-        // 2️⃣ Send confirmation email to client
-        return emailjs.sendForm(serviceID, clientTemplateID, contactForm);
+        // Send confirmation email to client
+        return emailjs.sendForm(serviceID, clientTemplateID, this);
       })
       .then(() => {
         modalMessage.innerHTML = '✅ Thank you! Your message has been sent. We’ll get back to you shortly.';
         contactForm.reset();
       })
-      .catch((error) => {
-        console.error('EmailJS Error:', error);
-        modalMessage.innerHTML = '❌ Failed to send message. Please try again later.';
+      .catch((err) => {
+        console.error('EmailJS Error:', err);
+        modalMessage.innerHTML = '❌ Failed to send message. Please check your input and try again.';
       });
   });
 }
 
-// Close modal when X is clicked
-modalClose.addEventListener('click', () => {
-  modal.style.display = 'none';
-});
-
-// Close modal if user clicks outside the modal content
-window.addEventListener('click', (e) => {
-  if (e.target == modal) {
-    modal.style.display = 'none';
-  }
-});
+// ---------- Modal Close ----------
+modalClose.addEventListener('click', () => { modal.style.display = 'none'; });
+window.addEventListener('click', (e) => { if(e.target === modal){ modal.style.display = 'none'; } });

@@ -1,16 +1,16 @@
-/* ===========================
-   OG CREATIVE AGENCY CSS
-=========================== */
+/* ============================= */
+/* OG CREATIVE AGENCY FULL CSS    */
+/* ============================= */
 
 /* CSS Variables for Easy Theming (Professional Agency Colors: Navy Blue, Teal, Emerald Green) */
 :root {
-  --primary-color: #1e3a8a; /* Deep Navy Blue */
-  --secondary-color: #06b6d4; /* Teal */
-  --accent-color: #10b981; /* Emerald Green */
+  --primary-color: #1e3a8a; /* Deep Navy Blue - Trust and Stability */
+  --secondary-color: #06b6d4; /* Teal - Fresh and Creative */
+  --accent-color: #10b981; /* Emerald Green - Growth and Action */
   --bg-color: #f8f9fa; /* Light Gray Background */
   --text-color: #333; /* Dark Text */
-  --shadow: 0 4px 20px rgba(30, 58, 138, 0.2);
-  --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --shadow: 0 4px 20px rgba(30, 58, 138, 0.2); /* Subtle Navy Shadow */
+  --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth Transitions */
 }
 
 /* Global Styles */
@@ -25,7 +25,7 @@ body {
   position: relative;
 }
 
-/* Subtle Background Pattern */
+/* Subtle Background Pattern for Depth */
 body::before {
   content: '';
   position: fixed;
@@ -39,7 +39,7 @@ body::before {
   pointer-events: none;
 }
 
-/* Header */
+/* Header with Floating Effect */
 header {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: white;
@@ -75,7 +75,7 @@ nav {
   50% { transform: translateY(-5px); }
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu Button */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -247,7 +247,7 @@ nav a:hover::after {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.5s;
 }
 
@@ -260,7 +260,7 @@ nav a:hover::after {
   box-shadow: 0 12px 35px rgba(16, 185, 129, 0.6);
 }
 
-/* Sections */
+/* Section Styles */
 section {
   padding: 80px 20px;
   max-width: 1200px;
@@ -307,6 +307,7 @@ h2::after {
   text-align: center;
 }
 
+/* Profile Image */
 .profile-img {
   display: block;
   margin: 2rem auto 0;
@@ -329,7 +330,7 @@ h2::after {
   padding: 30px;
   border-radius: 15px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: var(--transition);
   position: relative;
   overflow: hidden;
@@ -393,12 +394,12 @@ input, textarea {
   border-radius: 10px;
   font-size: 1rem;
   transition: var(--transition);
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 input:focus, textarea:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 10px rgba(30,58,138,0.5);
+  box-shadow: 0 0 10px rgba(30, 58, 138, 0.5);
   outline: none;
 }
 
@@ -427,7 +428,7 @@ footer {
   text-align: center;
   padding: 30px;
   font-size: 1rem;
-  box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Mobile Responsiveness */
@@ -450,9 +451,7 @@ footer {
   .profile-img { width: 120px; height: 120px; }
 }
 
-/* ===========================
-   MODAL STYLES
-=========================== */
+/* ===== MODAL STYLES ===== */
 .modal {
   display: none;
   position: fixed;
