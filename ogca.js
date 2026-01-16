@@ -1,22 +1,24 @@
-// EmailJS setup (replace YOUR_SERVICE_ID and YOUR_TEMPLATE_ID with your actual IDs from EmailJS dashboard)
-const serviceID = 'ogservice_abc123';  // e.g., 'service_abc123' - Get from Email Services
-const templateID = 'template_b1jdwlh';  // e.g., 'template_xyz789' - Get from Email Templates
-const publicKey = 'hFJwWMb6MB3TbaJO9';  // Your Public Key
+// ================= EMAILJS CONFIG =================
+const serviceID = 'service_cnixn9e';
+const adminTemplateID = 'template_6t6x5kq';
+const clientTemplateID = 'template_aqhupw5';
+const publicKey = 'hFJwWMb6MB3TbaJO9';
 
-// Initialize EmailJS
 emailjs.init(publicKey);
 
-// Hamburger Menu Toggle Functionality
+// ================= HAMBURGER MENU =================
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.getElementById('nav-menu');
 
 hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active'); // Animate hamburger to X
-  navMenu.classList.toggle('active'); // Show/hide menu overlay
-  hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active')); // Accessibility update
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+  hamburger.setAttribute(
+    'aria-expanded',
+    hamburger.classList.contains('active')
+  );
 });
 
-// Close menu when a link is clicked (for better UX on mobile)
 navMenu.addEventListener('click', (e) => {
   if (e.target.tagName === 'A') {
     hamburger.classList.remove('active');
@@ -25,7 +27,6 @@ navMenu.addEventListener('click', (e) => {
   }
 });
 
-// Optional: Close menu on outside click or escape key (enhances usability)
 document.addEventListener('click', (e) => {
   if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
     hamburger.classList.remove('active');
@@ -42,21 +43,45 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Handle contact form submission with EmailJS
+// ================= CONTACT FORM WITH MODAL =================
 const contactForm = document.getElementById('contact-form');
+const modal = document.getElementById('form-modal');
+const modalMessage = document.getElementById('modal-message');
+const modalClose = document.getElementById('modal-close');
+
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent default submission
-    const statusDiv = document.getElementById('form-status');
-    statusDiv.innerHTML = 'Sending...';
+    e.preventDefault();
 
-    emailjs.sendForm(serviceID, templateID, this)
+    // Show sending message in modal
+    modalMessage.textContent = 'Sending message...';
+    modal.style.display = 'block';
+
+    // 1️⃣ Send email to admin
+    emailjs.sendForm(serviceID, adminTemplateID, this)
       .then(() => {
-        statusDiv.innerHTML = '<p style="color: green;">Thank you! Your message has been sent. I\'ll get back to you soon.</p>';
-        this.reset(); // Clear the form
-      }, (error) => {
-        console.error('EmailJS Error:', error);  // For debugging
-        statusDiv.innerHTML = '<p style="color: red;">Failed to send message. Please try again or email me directly.</p>';
+        // 2️⃣ Send confirmation email to client
+        return emailjs.sendForm(serviceID, clientTemplateID, contactForm);
+      })
+      .then(() => {
+        modalMessage.innerHTML = '✅ Thank you! Your message has been sent. We’ll get back to you shortly.';
+        contactForm.reset();
+      })
+      .catch((error) => {
+        console.error('EmailJS Error:', error);
+        modalMessage.innerHTML = '❌ Failed to send message. Please try again later.';
       });
   });
 }
+
+// Close modal when X is clicked
+modalClose.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// Close modal if user clicks outside the modal content
+window.addEventListener('click', (e) => {
+  if (e.target == modal) {
+    modal.style.display = 'none';
+  }
+});

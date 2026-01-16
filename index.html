@@ -1,86 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OG Creative Agency - Professional website development by Onkabetse Galehole. Build websites for clients worldwide.">
-    <meta name="keywords" content="website development, software developer, OG Creative Agency, Onkabetse Galehole">
-    <title>OG Creative Agency - Website Development Services</title>
-    <link rel="stylesheet" href="ogca.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>  <!-- EmailJS library -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OG Creative Agency - Professional website development services for businesses worldwide.">
+  <meta name="keywords" content="website development, web design, OG Creative Agency">
+  <title>OG Creative Agency - Website Development Services</title>
+
+  <link rel="stylesheet" href="ogca.css">
+  <link rel="icon" href="images/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS
+    emailjs.init('hFJwWMb6MB3TbaJO9');
+  </script>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <div class="logo">OG Creative Agency</div>
-            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
-            <ul id="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="home" class="hero">
-        <h1>Welcome to OG Creative Agency</h1>
-        <p>Professional website development for clients worldwide. Let's build something amazing together.</p>
-        <a href="#contact" class="cta-button">Get in Touch</a>
-    </section>
+<header>
+  <nav>
+    <div class="logo">OG Creative Agency</div>
+    <button class="hamburger" aria-label="Toggle navigation menu">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </button>
+    <ul id="nav-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>OG Creative Agency Specializes in crafting modern ,responsive ,and visually engaging websites tailored to each client's needs.Our goal is to help brands stand out online through thoughtful design and practical web solutions.
+<section id="home" class="hero">
+  <h1>Welcome to OG Creative Agency</h1>
+  <p>Professional website development for clients worldwide. Let’s build something amazing together.</p>
+  <a href="#contact" class="cta-button">Get in Touch</a>
+</section>
 
-            OG Creative Agency is led by Onkabetse Galehole ,the creative mind behind the brand ,ensuring every project is built with attention to detail ,performance ,and user experience.
-        </p>
-        <!-- Optional: Add an image here, e.g., <img src="images/profile.jpg" alt="Onkabetse Galehole" class="profile-img"> -->
-    </section>
+<section id="about">
+  <h2>About OG Creative Agency</h2>
+  <p>
+    OG Creative Agency specializes in crafting modern, responsive, and visually engaging websites tailored to each client’s needs.
+    Our goal is to help brands stand out online through thoughtful design and practical web solutions.
+    <br><br>
+    The agency is led by <strong>Onkabetse Galehole (OG)</strong>, the creative mind behind the brand,
+    ensuring every project is built with attention to detail, performance, and user experience.
+  </p>
+  <!-- Optional image -->
+  <!-- <img src="images/profile.jpg" alt="Onkabetse Galehole" class="profile-img"> -->
+</section>
 
-    <section id="services">
-        <h2>Services</h2>
-        <div class="service-list">
-            <div class="service">
-                <h3>Custom Website Development</h3>
-                <p>Tailored websites built with HTML, CSS, JavaScript, and frameworks like React or Vue.</p>
-            </div>
-            <div class="service">
-                <h3>Responsive Design</h3>
-                <p>Mobile-friendly sites that look great on all devices.</p>
-            </div>
-            <div class="service">
-                <h3>SEO Optimization</h3>
-                <p>Get found online with search engine-friendly practices.</p>
-            </div>
-        </div>
-    </section>
+<section id="services">
+  <h2>Services</h2>
+  <div class="service-list">
+    <div class="service">
+      <h3>Custom Website Development</h3>
+      <p>Custom-built websites using HTML, CSS, JavaScript, and modern frameworks.</p>
+    </div>
+    <div class="service">
+      <h3>Responsive Design</h3>
+      <p>Mobile-friendly websites that look great on all screen sizes.</p>
+    </div>
+    <div class="service">
+      <h3>SEO Optimization</h3>
+      <p>Search engine–friendly websites to help your business get discovered.</p>
+    </div>
+  </div>
+</section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form id="contact-form">  <!-- EmailJS handles submission -->
-            <label for="from_name" class="sr-only">Your Name</label>
-            <input type="text" id="from_name" name="from_name" placeholder="Your Name" required>
-            <label for="from_email" class="sr-only">Your Email</label>
-            <input type="email" id="from_email" name="from_email" placeholder="Your Email" required>
-            <label for="message" class="sr-only">Tell us about your project.....e.g. What type of website do you need ,Your business name and any specific features you want</label>
-            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <div id="form-status"></div>  <!-- Shows success/error messages -->
-        <p>Or send me a Whatsapp message directly on:064 774 7154 </p>
-    </section>
+<section id="contact">
+  <h2>Contact Us</h2>
 
-    <footer>
-        <p>&copy; 2026 OG Creative Agency. All rights reserved.</p>
-    </footer>
+  <form id="contact-form">
+    <input type="text" name="from_name" placeholder="Your Name" required>
+    <input type="email" name="from_email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Example: Hi OG Creative Agency, I need a website for my business called XYZ Services. I’d like a clean modern design, mobile responsiveness, and a contact form." required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
 
-    <script src="ogca.js"></script>
+  <p>Or WhatsApp us directly on: <strong>064 774 7154</strong></p>
+</section>
+
+<footer>
+  <p>&copy; 2026 OG Creative Agency. All rights reserved.</p>
+</footer>
+
+<!-- Modal -->
+<div id="form-modal" class="modal">
+  <div class="modal-content">
+    <span id="modal-close" class="modal-close">&times;</span>
+    <p id="modal-message"></p>
+  </div>
+</div>
+
+<!-- JS -->
+<script src="ogca.js"></script>
+
 </body>
 </html>

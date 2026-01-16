@@ -1,12 +1,16 @@
+/* ===========================
+   OG CREATIVE AGENCY CSS
+=========================== */
+
 /* CSS Variables for Easy Theming (Professional Agency Colors: Navy Blue, Teal, Emerald Green) */
 :root {
-  --primary-color: #1e3a8a; /* Deep Navy Blue - Trust and Stability */
-  --secondary-color: #06b6d4; /* Teal - Fresh and Creative */
-  --accent-color: #10b981; /* Emerald Green - Growth and Action */
+  --primary-color: #1e3a8a; /* Deep Navy Blue */
+  --secondary-color: #06b6d4; /* Teal */
+  --accent-color: #10b981; /* Emerald Green */
   --bg-color: #f8f9fa; /* Light Gray Background */
   --text-color: #333; /* Dark Text */
-  --shadow: 0 4px 20px rgba(30, 58, 138, 0.2); /* Subtle Navy Shadow */
-  --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth Transitions */
+  --shadow: 0 4px 20px rgba(30, 58, 138, 0.2);
+  --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Global Styles */
@@ -17,11 +21,11 @@ body {
   line-height: 1.6;
   color: var(--text-color);
   background: var(--bg-color);
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
   position: relative;
 }
 
-/* Subtle Background Pattern for Depth */
+/* Subtle Background Pattern */
 body::before {
   content: '';
   position: fixed;
@@ -35,7 +39,7 @@ body::before {
   pointer-events: none;
 }
 
-/* Header with Floating Effect */
+/* Header */
 header {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: white;
@@ -45,7 +49,7 @@ header {
   top: 0;
   z-index: 100;
   box-shadow: var(--shadow);
-  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -59,11 +63,11 @@ nav {
 }
 
 .logo {
-  font-family: 'Montserrat', sans-serif; /* Bold, modern font for logo */
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 1.8rem;
   position: relative;
-  animation: float 3s ease-in-out infinite; /* Floating animation */
+  animation: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -71,9 +75,9 @@ nav {
   50% { transform: translateY(-5px); }
 }
 
-/* Hamburger Menu Button */
+/* Hamburger Menu */
 .hamburger {
-  display: none; /* Hidden on desktop */
+  display: none;
   flex-direction: column;
   justify-content: space-around;
   width: 30px;
@@ -98,7 +102,6 @@ nav {
   background: var(--accent-color);
 }
 
-/* Active state for hamburger (X shape) */
 .hamburger.active .line:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -144,10 +147,10 @@ nav a:hover::after {
 #nav-menu {
   position: fixed;
   top: 0;
-  right: -100%; /* Hidden off-screen */
+  right: -100%;
   width: 250px;
   height: 100vh;
-  background: rgba(30, 58, 138, 0.95); /* Semi-transparent navy */
+  background: rgba(30, 58, 138, 0.95);
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
@@ -159,7 +162,7 @@ nav a:hover::after {
 }
 
 #nav-menu.active {
-  right: 0; /* Slide in */
+  right: 0;
 }
 
 #nav-menu a {
@@ -174,7 +177,7 @@ nav a:hover::after {
   transform: scale(1.1);
 }
 
-/* Hero Section with Parallax-Like Effect and Glow */
+/* Hero Section */
 .hero {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: white;
@@ -200,7 +203,7 @@ nav a:hover::after {
   height: 100%;
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
   opacity: 0.3;
-  animation: parallax 10s linear infinite; /* Subtle parallax */
+  animation: parallax 10s linear infinite;
 }
 
 @keyframes parallax {
@@ -244,7 +247,7 @@ nav a:hover::after {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
   transition: left 0.5s;
 }
 
@@ -257,13 +260,12 @@ nav a:hover::after {
   box-shadow: 0 12px 35px rgba(16, 185, 129, 0.6);
 }
 
-/* Section Styles with Card Effects */
+/* Sections */
 section {
   padding: 80px 20px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   background: white;
-  margin-bottom: 30px;
   border-radius: 15px;
   box-shadow: var(--shadow);
   position: relative;
@@ -315,7 +317,7 @@ h2::after {
   border: 5px solid var(--secondary-color);
 }
 
-/* Services Section with Grid and Icons */
+/* Services */
 .service-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -327,7 +329,7 @@ h2::after {
   padding: 30px;
   border-radius: 15px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: var(--transition);
   position: relative;
   overflow: hidden;
@@ -355,29 +357,28 @@ h2::after {
   color: var(--primary-color);
 }
 
-/* CSS-Based Icons for Services (No External Images Needed) */
 .service:nth-child(1)::after {
-  content: '💻'; /* Custom Website */
+  content: '💻';
   font-size: 3rem;
   display: block;
   margin-bottom: 1rem;
 }
 
 .service:nth-child(2)::after {
-  content: '📱'; /* Responsive Design */
+  content: '📱';
   font-size: 3rem;
   display: block;
   margin-bottom: 1rem;
 }
 
 .service:nth-child(3)::after {
-  content: '🔍'; /* SEO */
+  content: '🔍';
   font-size: 3rem;
   display: block;
   margin-bottom: 1rem;
 }
 
-/* Contact Form with Glow Effects */
+/* Contact Form */
 #contact form {
   display: flex;
   flex-direction: column;
@@ -392,12 +393,12 @@ input, textarea {
   border-radius: 10px;
   font-size: 1rem;
   transition: var(--transition);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255,255,255,0.9);
 }
 
 input:focus, textarea:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 10px rgba(30, 58, 138, 0.5);
+  box-shadow: 0 0 10px rgba(30,58,138,0.5);
   outline: none;
 }
 
@@ -426,66 +427,69 @@ footer {
   text-align: center;
   padding: 30px;
   font-size: 1rem;
-  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  nav ul {
-    display: none; /* Hide full nav on mobile */
-  }
-
-  .hamburger {
-    display: flex; /* Show hamburger on mobile */
-  }
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero p {
-    font-size: 1.1rem;
-  }
-
-  .cta-button {
-    padding: 12px 25px;
-    font-size: 1rem;
-  }
-
-  section {
-    padding: 50px 15px;
-    border-radius: 10px;
-  }
-
-  .service-list {
-    grid-template-columns: 1fr; /* Stack services on mobile */
-  }
-
-  .service {
-    padding: 20px;
-  }
-
-  input, textarea, button {
-    font-size: 1rem;
-    padding: 12px;
-  }
+  nav ul { display: none; }
+  .hamburger { display: flex; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero p { font-size: 1.1rem; }
+  .cta-button { padding: 12px 25px; font-size: 1rem; }
+  section { padding: 50px 15px; border-radius: 10px; }
+  .service-list { grid-template-columns: 1fr; }
+  .service { padding: 20px; }
+  input, textarea, button { font-size: 1rem; padding: 12px; }
 }
 
 @media (max-width: 480px) {
-  .hero {
-    padding: 120px 15px 80px;
-  }
+  .hero { padding: 120px 15px 80px; }
+  .logo { font-size: 1.4rem; }
+  h2 { font-size: 2rem; }
+  .profile-img { width: 120px; height: 120px; }
+}
 
-  .logo {
-    font-size: 1.4rem;
-  }
+/* ===========================
+   MODAL STYLES
+=========================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
 
-  h2 {
-    font-size: 2rem;
-  }
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 30px 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
 
-  .profile-img {
-    width: 120px;
-    height: 120px;
-  }
+.modal-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #333;
+}
+
+#modal-message {
+  font-size: 1.1rem;
+  margin-top: 20px;
 }
